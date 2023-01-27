@@ -1,0 +1,66 @@
+@import "../../styles/styles.scss";
+:host {
+  @extend %flexbox;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+}
+
+
+
+h1.about-header {
+  white-space: pre-line;
+  font-size: 1.8rem !important;
+}
+
+@include breakpoint($small_screen) {
+  h1.about-header {
+    font-size: 1.55rem !important;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  h1.about-header {
+    font-size: 2rem !important;
+  }
+}
+
+@include breakpoint($large_screen) {
+  h1.about-header {
+    font-size: 2.5rem !important;
+  }
+}
+
+.service-feature .content p.about-description {
+  white-space: pre-line;
+  margin: 20px 0 0 0 !important;
+  line-height: 95%;
+}
+
+@include breakpoint($small_screen) {
+  .service-feature .content p.about-description {
+    margin: 30px 0 0 0 !important;
+    line-height: 100%;
+  }
+}
+
+.about-img-wrapper {
+  display: none;
+}
+
+@include breakpoint($small_screen) {
+  .about-img-wrapper {
+    @include flexbox;
+    align-items: center;
+    width: 40%;
+  }
+}
+
+.about-img-wrapper img {
+  width: 100%;
+}

@@ -1,0 +1,25 @@
+<div class="roulette">
+    <div #projectPanel *ngFor="let project of projects; let i = index" class="project-panel" cursor>
+        <pivot  [doesPivot]="project.isActive"
+                (click)="goToProject(i)">
+            <img src="{{project.imgSrc}}">
+            <h1>{{project.label}}</h1>
+        </pivot>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="previous" cursor
+        (click)="previous()">
+        Previous
+    </div>
+    <div class="position">
+        <div *ngFor="let project of projects; let i = index" class="dot-wrapper" cursor>
+            <div class="dot" [class.active]="project.isActive" (click)="scrollTo(i)"></div>
+        </div>
+    </div>
+    <div class="next" cursor
+        (click)="next()">
+        Next
+    </div>
+</div>

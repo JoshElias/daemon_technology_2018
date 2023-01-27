@@ -1,0 +1,110 @@
+@import 'variables';
+
+
+%marketing-link {
+    @extend %flexbox;
+    @extend %remove-select;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: height 150ms ease-in;
+
+    &:hover {
+        span {
+            height: 60px;
+        }
+    }
+
+    & span {
+        height: 40px;
+        width: 2px;
+        background: whitesmoke;
+        border-radius: 3px;
+        transition: height 300ms ease-in-out;
+    }
+
+    & h2 {
+        @extend %nav-text;
+        @extend %clear-margin;
+        font-size: 1rem;
+    } 
+}
+
+@include breakpoint($small_screen) {
+    %marketing-link {
+        &:hover {
+            span {
+                height: 70px;
+            }
+        }
+    
+        & span {
+            height: 50px;
+        }
+    
+        & h2 {
+            font-size: 1.2rem;
+        } 
+    }
+  }
+
+  @include breakpoint($medium_screen) {
+    %marketing-link {
+        &:hover {
+            span {
+                height: 90px;
+            }
+        }
+    
+        & span {
+            height: 70px;
+        }
+    
+        & h2 {
+            font-size: 1.2rem;
+        } 
+    }
+  }
+  
+
+
+.top-link {
+    @extend %marketing-link;
+    top: 0;
+}
+
+.top-link h2 {
+    margin-top: 5px;
+}
+
+
+.bottom-link {
+    @extend %marketing-link;
+    bottom: 0;
+}
+
+.bottom-link h2 {
+    margin-bottom: 5px;
+}
+
+
+.daemon-button {
+    cursor: none;
+    @extend %header-text;
+    font-weight: 400 !important;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background: none;
+    border: 1px solid $blue;
+    color: $blue !important;
+    margin-top: 30px;
+    padding: 8px 30px;
+    transition: all 150ms ease-out;
+  }
+  
+  .daemon-button:hover {
+    background: $blue;
+    color: black !important;
+  }
+  

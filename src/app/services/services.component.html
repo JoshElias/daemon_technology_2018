@@ -1,0 +1,17 @@
+<pivot>
+    <div class="service-header"> 
+        <h1>Services</h1>
+        <p>Daemon is a software development company based in Ottawa, Canada that specializes in web based content and services.</p>
+    </div>
+    <div class="service-list">
+        <div *ngFor="let listing of listings" class="service-listing-wrapper">
+            <div class="service-listing" cursor
+                [routerLink]="[listing.route]">
+                <img src="{{listing.imgSrc}}">
+                <div class="label-wrapper">
+                    <h3>{{listing.label}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</pivot>

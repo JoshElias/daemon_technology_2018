@@ -1,0 +1,212 @@
+@import "../../styles/styles.scss";
+:host {
+  @extend %flexbox;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.roulette {
+  @extend %flexbox;
+  height: 400px;
+  position: relative;
+}
+
+.project-panel {
+  height: 100%;
+  position: absolute;
+  transition: all 250ms ease-in-out;
+}
+
+pivot {
+  height: 100%;
+  margin: 0 40px 0 40px;
+  position: relative;
+  text-align: center;
+  display: block;
+  background: black;
+}
+
+pivot:hover {
+  background: none;
+}
+
+pivot img {
+  height: 100%;
+  opacity: 0.5;
+}
+
+pivot h1 {
+  @extend %clear-margin;
+  @extend %header-text;
+  font-size: 2.6rem;
+  font-weight: 400;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+@include breakpoint($small_screen) {
+  pivot h1 {
+    font-size: 3.2rem;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  pivot h1 {
+    font-size: 3.6rem;
+  }
+}
+
+@include breakpoint($large_screen) {
+  pivot h1 {
+    font-size: 4rem;
+  }
+}
+
+.footer {
+  @extend %flexbox;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+}
+
+@include breakpoint($small_screen) {
+  .footer {
+    height: 25%;
+  }
+}
+
+.previous,
+.next {
+  @extend %body-text;
+  font-size: 1rem;
+}
+
+@include breakpoint($small_screen) {
+  .previous,
+  .next {
+    font-size: 1.1rem;
+  }
+}
+
+.previous::before,
+.next::after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 2px;
+  background: whitesmoke;
+  transition: all 150ms ease-out;
+}
+
+@include breakpoint($small_screen) {
+  .previous::before,
+  .next::after {
+    content: '';
+    width: 30px;
+  }
+}
+
+.previous::after {
+  margin-right: 5px;
+}
+
+@include breakpoint($small_screen) {
+  .previous::after {
+    margin-right: 10px;
+  }
+}
+
+.next::after {
+  margin-left: 5px;
+}
+
+@include breakpoint($small_screen) {
+  .next::after {
+    margin-left: 10px;
+  }
+}
+
+.previous:hover {
+  &::before {
+    width: 30px
+  }
+}
+
+.next:hover {
+  &::after {
+    width: 30px
+  }
+}
+
+@include breakpoint($small_screen) {
+  .previous:hover {
+    &::before {
+      width: 50px
+    }
+  }
+  .next:hover {
+    &::after {
+      width: 50px
+    }
+  }
+}
+
+.position {
+  @extend %flexbox;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+.dot-wrapper {
+  position: relative;
+  margin: 0 5px 0 5px;
+  width: 10px;
+  height: 10px;
+}
+
+@include breakpoint($small_screen) {
+  .dot-wrapper {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.dot-wrapper:hover {
+  .dot::before {
+    opacity: 1;
+  }
+}
+
+.dot::before {
+  color: whitesmoke;
+  @extend %flexbox;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  opacity: .25;
+  transition: all 150ms ease-out;
+}
+
+.dot.active {
+  &::before {
+    font-size: 1.6rem;
+    opacity: 1;
+  }
+}

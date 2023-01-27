@@ -1,0 +1,39 @@
+<div class="menu-header">
+  <div class="menu-logo" cursor [routerLink]="['/home']">
+    <img src="{{daemonLogo}}">
+  </div>
+
+  <a class="close-button" cursor (click)="back()"></a>
+</div>
+
+<div class="menu-links">
+  <div>
+    <a cursor [routerLink]="['/services']">
+      SERVICES
+    </a>
+  </div>
+  <div>
+    <a cursor [routerLink]="['/projects']">
+      PROJECTS
+    </a>
+  </div>
+  <div>
+    <a cursor [routerLink]="['/about']">
+      ABOUT
+    </a>
+  </div>
+  <div>
+    <a cursor [routerLink]="['/contact']">
+      CONTACT
+    </a>
+  </div>
+</div>
+
+<div class="menu-footer">
+  <div class="social-media">
+    <a target="_blank" href="https://www.linkedin.com/in/josh-elias-9216764a" cursor>LINKEDIN</a>
+    /
+    <a target="_blank" href="https://s3.ca-central-1.amazonaws.com/assets.daemontechnology.com/assets/pdf/Josh-Elias-Resume.pdf"
+      cursor>RESUME</a>
+  </div>
+</div>

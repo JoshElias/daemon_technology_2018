@@ -1,0 +1,178 @@
+@import 'variables';
+
+
+.project-background { 
+    @extend %flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.2;
+    position: absolute;
+}
+
+.project-feature {
+    @extend %flexbox;
+    width: calc(100% - 60px);
+    position: relative;
+}
+
+@include breakpoint($medium_screen) {
+    .project-feature {
+        width: 800px;
+    }
+}
+
+@include breakpoint($large_screen) {
+    .project-feature {
+        width: 1000px;
+    }
+}
+
+
+.project-content {
+    @extend %flexbox;
+    flex-direction: column;
+    margin-right: 10px;
+    width: calc(60% - 10px);
+}
+
+@include breakpoint($small_screen) {
+    .project-content {
+        margin-right: 30px;
+        width: calc(60% - 30px);
+    }
+}
+
+.project-content h1 {
+    @extend %clear-margin;
+    @extend %header-text;
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    width: 400px
+}
+
+@include breakpoint($small_screen) {
+    .project-content h1 {
+        width: auto;
+    }
+}
+
+@include breakpoint($medium_screen) {
+    .project-content h1 {
+        font-size: 3rem;
+    }
+}
+
+.project-content h1::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: $blue;
+    position: absolute;
+    bottom: 0;
+    left: -3%;
+}
+
+.project-content p {
+    @extend %clear-margin;
+    @extend %header-text;
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin: 10px 0 10px 0;
+}
+
+@include breakpoint($small_screen) {
+    .project-content p {
+        margin: 20px 0 20px 0;
+    }
+}
+
+@include breakpoint($medium_screen) {
+    .project-content p {
+        font-size: 1.1rem;
+    }
+}
+
+.project-content h2 {
+    @extend %clear-margin;
+    @extend %body-text;
+    font-size: 1.1rem;
+}
+
+@include breakpoint($medium_screen) {
+    .project-content h2 {
+        font-size: 1.4rem;
+    }
+}
+
+.project-content .tech-used {
+    margin: 10px 0 0 0;
+}
+
+@include breakpoint($small_screen) {
+    .project-content .tech-used {
+        margin: 20px 0 0 0;
+    }
+}
+
+
+.project-content ul {
+    @extend %clear-margin;
+    @extend %header-text;
+    font-weight: 400;
+    margin: 5px 0 0 0;    
+    font-size: 0.8rem;
+}
+
+@include breakpoint($medium_screen) {
+    .project-content ul {
+        font-size: 1rem;
+    }
+}
+
+
+
+.project-preview {
+    @extend %flexbox;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+.project-img-wrapper {
+    margin: 20px 0 0 0;
+    width: 100%;
+    border: 1px solid whitesmoke;  
+    transition: all 150ms ease-out;
+    background: black;
+}
+.project-img-wrapper:hover {
+    border-color: $blue;
+}
+
+
+
+.project-feature img {
+    width: 100%;
+    height: auto;
+}
+
+.project-preview a {
+    cursor: none;
+}
+
+.project-preview h2 {
+    @extend %clear-margin;
+    @extend %header-text;
+    font-weight: 400;
+    margin: 30px 0 0 0;
+    font-size: 2rem;
+}

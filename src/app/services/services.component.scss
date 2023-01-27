@@ -1,0 +1,194 @@
+@import "../../styles/styles.scss";
+
+:host {
+  @extend %flexbox;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.service-header {
+  @extend %flexbox;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-header h1 {
+  position: relative;
+  @extend %clear-margin;
+  @extend %header-text;
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+}
+
+@include breakpoint($small_screen) {
+  .service-header h1 {
+    font-size: 1.9rem;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  .service-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@include breakpoint($large_screen) {
+  .service-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+.service-header h1::after {
+  content: '';
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 1px;
+  background: $blue;
+  bottom: 0;
+}
+
+@include breakpoint($small_screen) {
+  .service-header h1::after {
+    width: 55px;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  .service-header h1::after {
+    width: 60px;
+  }
+}
+
+@include breakpoint($large_screen) {
+  .service-header h1::after {
+    width: 70px;
+  }
+}
+
+.service-header p {
+  @extend %clear-margin;
+  @extend %body-text;
+  margin: 20px 0 10px 0;
+  max-width: 280px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@include breakpoint($small_screen) {
+  .service-header p {
+    max-width: 400px;
+    font-size: 1.1rem;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  .service-header p {
+    font-size: 1.2rem;
+    max-width: 500px;
+  }
+}
+
+@include breakpoint($extra_large_screen) {
+  .service-header p {
+    font-size: 1.4rem;
+    max-width: 600px;
+  }
+}
+
+.service-list {
+  @extend %flexbox;
+  flex-wrap: wrap;
+}
+
+.service-listing-wrapper {
+  @extend %flexbox;
+  @extend %no-select;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 3);
+  outline: none;
+}
+
+.service-listing {
+  margin-top: 30px;
+  width: 60px;
+  outline: none;
+}
+
+@include breakpoint($small_screen) {
+  .service-listing {
+    width: 90px;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  .service-listing {
+    width: 130px;
+  }
+}
+
+@include breakpoint($extra_large_screen) {
+  .service-listing {
+    width: 150px;
+  }
+}
+
+.service-listing:hover {
+  h3::after { 
+    width: 100%;
+  }
+}
+
+.service-listing img {
+  width: 100%
+}
+
+.service-listing .label-wrapper {
+  @extend %flexbox;
+  justify-content: center;
+}
+
+.service-listing h3 {
+  @extend %clear-margin;
+  @extend %header-text;
+  font-size: 1.1rem;
+  font-weight: 400;
+  position: relative;
+  display: inline-flex;
+  padding-bottom: 5px;
+}
+
+@include breakpoint($small_screen) {
+  .service-listing h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  .service-listing h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@include breakpoint($extra_large_screen) {
+  .service-listing h3 {
+    font-size: 1.4rem;
+  }
+}
+
+.service-listing h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: $blue;
+  transition: all 150ms ease-out;
+}

@@ -1,0 +1,121 @@
+@import "../../styles/styles.scss";
+
+:host {
+    @extend %clear-margin;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  .logo {
+    @extend %remove-select;
+    position: fixed;
+    width: 44px;
+    top: 20px;
+    left: 30px;
+    transition: all 300ms ease-in;
+    z-index: 100;
+  }
+  
+  @include breakpoint($small_screen) {
+    .logo {
+      width: 55px;
+    }
+  }
+  
+  @include breakpoint($medium_screen) {
+    .logo {
+      width: 60px;
+      left: 40px;
+      top: 30px;
+    }
+  }
+  
+  .logo:hover {
+    width: 52px;
+    top: 16px;
+    left: 26px;
+  }
+  
+  @include breakpoint($small_screen) {
+    .logo:hover {
+      width: 60px;
+      top: 18px;
+      left: 28px;
+    }
+  }
+  
+  @include breakpoint($medium_screen) {
+    .logo:hover {
+      width: 66px;
+      top: 26px;
+      left: 36px;
+    }
+  }
+  
+  .logo img {
+    width: 100%;
+  }
+  
+  .open-button {
+    @extend %clear-margin;
+    @extend %flexbox;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    width: 50px;
+    right: 30px;
+    top: 30px;
+    z-index: 100;
+    outline: none;
+  }
+  
+  @include breakpoint($small_screen) {
+    .open-button {
+      width: 55px;
+    }
+  }
+  
+  @include breakpoint($medium_screen) {
+    .open-button {
+      width: 60px;
+      right: 40px;
+      top: 40px;
+    }
+  }
+  
+  .open-button:hover {
+    span {
+      width: 80%;
+    }
+  }
+  
+  span {
+    height: 2px;
+    margin: 0px 0px 4px 0px;
+    border-radius: 3px;
+    background: whitesmoke;
+    transition: all 150ms ease-out;
+  }
+  
+  span:last-child {
+    margin: 0px 0px 0px 0px;
+  }
+  
+  .line0 {
+    width: 120%;
+  }
+  
+  .line1 {
+    width: 50%;
+  }
+  
+  .line2 {
+    width: 100%;
+  }
+  
+  .line3 {
+    width: 80%;
+  }

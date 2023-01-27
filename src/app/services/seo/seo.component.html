@@ -1,0 +1,31 @@
+<div class="top-link" cursor (click)="navigate('/services/api')">
+  <span></span>
+  <h2>API</h2>
+</div>
+
+<pivot class="service-feature">
+  <div class="back" cursor [routerLink]="['/services']">
+    back
+  </div>
+  <div class="content">
+    <h1>SEO</h1>
+    <h2>{{sections[activeSectionIndex].label}}</h2>
+    <p>{{sections[activeSectionIndex].content}}</p>
+    <div class="section-listings">
+      <h3 class="service-section" cursor *ngFor="let section of sections | slice:1; let i = index" (click)="activeSectionIndex = i+1">
+        {{section.label}}
+      </h3>
+    </div>
+    <button class="daemon-button" cursor [routerLink]="['/contact']">
+      CONTACT
+    </button>
+  </div>
+  <div class="service-img-wrapper">
+    <img src="{{seoImg}}">
+  </div>
+</pivot>
+
+<div class="bottom-link" cursor (click)="navigate('/services/security')">
+  <h2>Security</h2>
+  <span></span>
+</div>

@@ -1,0 +1,15 @@
+/* this file will be extracted to main dist folder and is imported in index.html */
+/* This file is for setting global styles  */
+@import url('https://fonts.googleapis.com/css?family=Bitter:400i|Montserrat:100,400,500i');
+@import "~breakpoint-sass/stylesheets/_breakpoint";
+@import 'screens';
+@import 'variables';
+@import 'marketing';
+@import 'service';
+@import 'project';
+
+
+nav {
+  margin-top: 16px;
+}
+

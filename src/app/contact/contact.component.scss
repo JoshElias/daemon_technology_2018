@@ -1,0 +1,86 @@
+@import "../../styles/styles.scss";
+
+
+:host {
+    @extend %flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.header-text {
+    position: relative;
+    @extend %flexbox;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+
+.header h1 {
+    @extend %clear-margin;
+    @extend %header-text;
+}
+
+.header h2 {
+    @extend %clear-margin;
+    @extend %body-text;
+}
+
+
+
+.info {
+    grid-area: info;
+    @extend %header-text;
+    @extend %flexbox;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info-entry {
+    @extend %flexbox;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.info-entry:last-child {
+    margin-bottom: 0;
+}
+
+.info-entry h3 {
+    @extend %clear-margin;
+    color: $blue;
+    margin-right: 20px;
+}
+
+.info-entry p {
+    @extend %clear-margin;
+    white-space: pre-line;
+    text-align: right;
+    font-size: 1rem !important;
+    max-width: 190px;
+}
+
+@include breakpoint($small_screen) {
+    .info-entry p {
+        max-width: none;
+    }
+
+    .info-entry p, .info-entry span {
+        font-size: 1.1rem !important;;
+    }
+}
+
+@include breakpoint($medium_screen) {
+    .info-entry p, .info-entry span {
+        font-size: 1.2rem !important;;
+    }
+}
+
+@include breakpoint($large_screen) {
+    .info-entry p, .info-entry span {
+        font-size: 1.3rem !important;;
+    }
+}

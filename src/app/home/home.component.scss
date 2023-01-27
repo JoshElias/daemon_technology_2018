@@ -1,0 +1,108 @@
+@import "../../styles/styles.scss";
+:host {
+  @extend %flexbox;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+pivot {
+  @extend %remove-select;
+  max-width: 150px;
+  @extend %flexbox;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+@include breakpoint($small_screen) {
+  pivot {
+    max-width: 200px;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  pivot {
+    max-width: 220px;
+  }
+}
+
+@include breakpoint($large_screen) {
+  pivot {
+    max-width: 250px;
+  }
+}
+
+@include breakpoint($extra_large_screen) {
+  pivot {
+    max-width: 300px;
+  }
+}
+
+pivot img {
+  width: 100%;
+}
+
+pivot h1 {
+  @extend %clear-margin;
+  @extend %header-text;
+  margin-top: 10px;
+  font-size: 2.2rem;
+}
+
+@include breakpoint($small_screen) {
+  pivot h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  pivot h1 {
+    font-size: 3rem;
+  }
+}
+
+@include breakpoint($large_screen) {
+  pivot h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@include breakpoint($extra_large_screen) {
+  pivot h1 {
+    font-size: 4rem;
+  }
+}
+
+pivot h2 {
+  @extend %clear-margin;
+  @extend %body-text;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+@include breakpoint($small_screen) {
+  pivot h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@include breakpoint($medium_screen) {
+  pivot h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@include breakpoint($large_screen) {
+  pivot h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@include breakpoint($extra_large_screen) {
+  pivot h2 {
+    font-size: 1.5rem;
+  }
+}
